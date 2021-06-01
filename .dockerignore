@@ -1,5 +1,6 @@
 *
 !environment.yaml
+!entrypoint.sh
 !data
 !grading
 !util.py

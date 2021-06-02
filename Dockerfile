@@ -7,4 +7,5 @@ RUN conda env create --file /tmp/environment.yaml
 WORKDIR /root/project
 COPY / .
 SHELL ["conda", "run", "-n", "ml4t", "/bin/bash", "-c"]
-ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "ml4t", "python"]
+ENTRYPOINT ["/bin/bash"]
+# ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "ml4t", "python"]

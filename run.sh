@@ -3,4 +3,5 @@
 echo "Building runtime environment"
 docker build -t ml4t .
 
-docker run --rm --name ml4t -e PYTHONPATH="/root/project" -v $(pwd)/src:/root/project/src ml4t:latest $@
+proj=$1
+docker run -ti -e PYTHONPATH="/root/project" -v $(pwd)/$proj:/root/project/$proj --workdir "/root/project/$proj" ml4t:latest
